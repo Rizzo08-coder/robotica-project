@@ -2,23 +2,34 @@
 
 ## client
 
-- npm install / update
+```bash
+npm install
+```
 
 ## flask-backend (set python virtual environment)
 
-- python3 -m venv venv
+```bash
+python3 -m venv venv
+```
 
-- source venv/bin/activate
+```bash
+source venv/bin/activate
+```
 
-- pip install Flask
-
+```bash
+pip install Flask
+```
 
 # Start Environment
 
-## start client
+## start client (on localhost:3000)
 
-- npm start -> localhost:3000
+```bash
+npm start
+```
 
-## start flask-backend
+## start flask-backend (on localhost:5000)
 
-- python3 server.py -> localhost:5000
+```bash
+python3 server.py
+```
