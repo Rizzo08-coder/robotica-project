@@ -1,7 +1,7 @@
 # Set environment 
 
 ## client
-
+node_modules directory
 ```bash
 npm install
 ```
