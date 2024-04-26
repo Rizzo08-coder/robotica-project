@@ -13,11 +13,18 @@ python3 -m venv venv
 ```
 
 ```bash
-source venv/bin/activate
+source venv/bin/activate 
 ```
+
 
 ```bash
 pip install Flask
+```
+
+## On Windows 
+Start the environment 
+```bash
+.\venv\Scripts\activate
 ```
 
 # Start Environment
