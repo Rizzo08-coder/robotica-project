@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react'
+import Component1 from './components/Component1'
+import './index.css';
 
 function App() {
 
@@ -21,7 +23,7 @@ function App() {
                <p>Loading...</p>
           ) : (
               data.list.map(
-                  (element, i) => ( <p key={i}>{element}</p> )
+                  (element, index) => ( <Component1 content={element} chiave={index}/> )
               )
           )}
       </div>
