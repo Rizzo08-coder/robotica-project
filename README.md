@@ -31,7 +31,21 @@ insert the next line:
 ```
 
 
-# FLASK + REACT 
+# Flask 
+
+Install Flask
+
+```bash
+pip install Flask
+```
+## start flask-backend (on localhost:5000)
+
+```bash
+python3 {name_file.py}
+```
+
+
+# React
 
 ## client (move on client directory)
 node_modules directory
@@ -39,31 +53,8 @@ node_modules directory
 npm install
 ```
 
-## server (move on server directory)
-
-```bash
-python3 -m venv venv
-```
-
-```bash
-source venv/bin/activate 
-```
-
-
-```bash
-pip install Flask
-```
-
-# Start Environment
-
 ## start client (on localhost:3000)
 
 ```bash
 npm start
-```
-
-## start flask-backend (on localhost:5000)
-
-```bash
-python3 server.py
 ```
