@@ -1,4 +1,4 @@
-# React
+# Virtaul teach pendant (using React)
 
 ## set dependencies
 node_modules directory
