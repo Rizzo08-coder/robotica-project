@@ -33,13 +33,13 @@ insert the next line:
 
 # FLASK + REACT 
 
-## client
+## client (move on client directory)
 node_modules directory
 ```bash
 npm install
 ```
 
-## flask-backend (set python virtual environment)
+## server (move on server directory)
 
 ```bash
 python3 -m venv venv
