@@ -54,12 +54,6 @@ source venv/bin/activate
 pip install Flask
 ```
 
-## On Windows 
-Start the environment 
-```bash
-.\venv\Scripts\activate
-```
-
 # Start Environment
 
 ## start client (on localhost:3000)
