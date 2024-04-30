@@ -8,6 +8,7 @@ import Root from "./routes/Root";
 import reportWebVitals from './reportWebVitals';
 import './index.css'
 
+
 const router = createBrowserRouter([
   {
     path: "/",

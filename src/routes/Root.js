@@ -1,14 +1,18 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
+import { Button } from "flowbite-react";
+
 class Root extends Component {
     render() {
         return (
-             <div>
-                <Link to={this.props.link}>
-                   <button className="bg-red-500 font-white">{this.props.buttonText}</button>
-                </Link>
-             </div>
+             <>
+                 <Link to={this.props.link}>
+                     <Button>
+                         {this.props.buttonText}
+                     </Button>
+                 </Link>
+             </>
         )
     }
 }
