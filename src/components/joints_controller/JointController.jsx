@@ -1,5 +1,5 @@
 import React from 'react'
-import BtnUpDownJoint from "../components/BtnUpDownJoint"
+import BtnUpDownJoint from "./BtnUpDownJoint"
 
 function JointController(props){
     return (
