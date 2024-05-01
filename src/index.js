@@ -12,10 +12,6 @@ import './index.css'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root link="/prova" buttonText="provaaa"/>,
-  },
-  {
-    path: "/prova",
     element: <Root />
   }
 ]);
