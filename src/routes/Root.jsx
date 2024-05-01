@@ -1,27 +1,18 @@
 import React from 'react'
-import ButtonMoveJoint from "../components/ButtonMoveJoint"
+import BtnUpDownJoint from "../components/JointController"
+import JointController from "../components/JointController";
 
 function Root(){
     return (
         <>
             <div className="flex justify-center items-center h-screen">
-                <div className="grid grid-cols-3 gap-4">
-                    <ButtonMoveJoint  buttonText="Joint1_up"
-                                      joint_1={1.0}
-                                      joint_2={0.0}
-                                      joint_3={0.0}
-                                      joint_4={0.0}
-                                      joint_5={0.0}
-                                      joint_6={0.0}
-                                      joint_abs="false"/>
-                    <ButtonMoveJoint  buttonText="Joint2_up"
-                                      joint_1={0.0}
-                                      joint_2={1.0}
-                                      joint_3={0.0}
-                                      joint_4={0.0}
-                                      joint_5={0.0}
-                                      joint_6={0.0}
-                                      joint_abs="false"/>
+                <div className="grid grid-cols-6 gap-12">
+                    <JointController name="J1" joint_1_plus={2.0} joint_1_minus={-2.0} joint_2_plus={0.0} joint_2_minus={0.0} joint_3_plus={0.0} joint_3_minus={0.0} joint_4_plus={0.0} joint_4_minus={0.0} joint_5_plus={0.0} joint_5_minus={0.0} joint_6_plus={0.0} joint_6_minus={0.0} joint_abs="false" />
+                    <JointController name="J2" joint_1_plus={0.0} joint_1_minus={0.0} joint_2_plus={2.0} joint_2_minus={-2.0} joint_3_plus={0.0} joint_3_minus={0.0} joint_4_plus={0.0} joint_4_minus={0.0} joint_5_plus={0.0} joint_5_minus={0.0} joint_6_plus={0.0} joint_6_minus={0.0} joint_abs="false" />
+                    <JointController name="J3" joint_1_plus={0.0} joint_1_minus={0.0} joint_2_plus={0.0} joint_2_minus={0.0} joint_3_plus={2.0} joint_3_minus={-2.0} joint_4_plus={0.0} joint_4_minus={0.0} joint_5_plus={0.0} joint_5_minus={0.0} joint_6_plus={0.0} joint_6_minus={0.0} joint_abs="false" />
+                    <JointController name="J4" joint_1_plus={0.0} joint_1_minus={0.0} joint_2_plus={0.0} joint_2_minus={0.0} joint_3_plus={0.0} joint_3_minus={0.0} joint_4_plus={2.0} joint_4_minus={-2.0} joint_5_plus={0.0} joint_5_minus={0.0} joint_6_plus={0.0} joint_6_minus={0.0} joint_abs="false" />
+                    <JointController name="J5" joint_1_plus={0.0} joint_1_minus={0.0} joint_2_plus={0.0} joint_2_minus={0.0} joint_3_plus={0.0} joint_3_minus={0.0} joint_4_plus={0.0} joint_4_minus={0.0} joint_5_plus={2.0} joint_5_minus={-2.0} joint_6_plus={0.0} joint_6_minus={0.0} joint_abs="false" />
+                    <JointController name="J6" joint_1_plus={0.0} joint_1_minus={0.0} joint_2_plus={0.0} joint_2_minus={0.0} joint_3_plus={0.0} joint_3_minus={0.0} joint_4_plus={0.0} joint_4_minus={0.0} joint_5_plus={0.0} joint_5_minus={0.0} joint_6_plus={2.0} joint_6_minus={-2.0} joint_abs="false" />
                 </div>
             </div>
         </>

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Button } from "flowbite-react";
 
 
-function ButtonMoveJoint(props) {
+function BtnUpDownJoint(props) {
 
     const [data, setData] = useState({})
 
@@ -34,11 +34,11 @@ function ButtonMoveJoint(props) {
 
     return (
             <>
-                <Button onClick={handleClick}>
+                <Button onClick={handleClick} color="light">
                     {props.buttonText}
                 </Button>
             </>
     )
 }
 
-export default ButtonMoveJoint
+export default BtnUpDownJoint
