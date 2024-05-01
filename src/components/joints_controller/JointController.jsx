@@ -13,7 +13,7 @@ function JointController(props){
                                     joint_4={props.joint_4_minus}
                                     joint_5={props.joint_5_minus}
                                     joint_6={props.joint_6_minus}
-                                    joint_abs="false"/>
+                                    joint_abs={props.joint_abs}/>
                     <div className="text-center place-self-center">
                         {props.name}
                     </div>
@@ -24,7 +24,7 @@ function JointController(props){
                                     joint_4={props.joint_4_plus}
                                     joint_5={props.joint_5_plus}
                                     joint_6={props.joint_6_plus}
-                                    joint_abs="false"/>
+                                    joint_abs={props.joint_abs}/>
                 </div>
             </div>
         </>
