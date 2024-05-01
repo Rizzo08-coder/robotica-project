@@ -4,7 +4,7 @@ import BtnUpDownJoint from "../components/BtnUpDownJoint"
 function JointController(props){
     return (
         <>
-            <div className="flex justify-center items-center h-screen">
+            <div className="flex justify-center items-center md:h-screen max-md:my-6">
                 <div className="grid grid-cols-3 ">
                     <BtnUpDownJoint buttonText="-"
                                     joint_1={props.joint_1_minus}
