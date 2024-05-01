@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import { Button } from "flowbite-react";
 
 
 function ButtonMoveJoint(props) {
 
-    const [data, setData] = useState([{}])
+    const [data, setData] = useState({})
 
     const requestData = {
         'joint_1' : props.joint_1,
@@ -17,12 +17,12 @@ function ButtonMoveJoint(props) {
     }
 
     //construzione url con parametri
-    const url = new URL('http://localhost:5000/api/move-joint');
+    const url = new URL('http://localhost:3000/api/move-joints');
     Object.keys(requestData).forEach(key => url.searchParams.append(key, requestData[key]));
 
     console.log(url)
 
-    useEffect(() => {
+    const handleClick = () => {
         fetch(url).then(
             res => res.json()
         ).then(
@@ -30,12 +30,11 @@ function ButtonMoveJoint(props) {
                 setData(data)
                 console.log(data)
             }
-        )
-    }, [data])
+        ).catch()}
 
     return (
             <>
-                <Button>
+                <Button onClick={handleClick}>
                     {props.buttonText}
                 </Button>
             </>
