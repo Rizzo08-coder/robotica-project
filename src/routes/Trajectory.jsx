@@ -33,10 +33,10 @@ function Trajectory(){
               [{trajectory.id}] - {trajectory.name}
             </div>
             <div className="flex flex-row">
-                 <div className="w-1/4 ">
+                 <div className="w-1/3 ">
                      <PointList />
                  </div>
-                 <div className="w-3/4 mt-32">
+                 <div className="w-2/3 mt-32">
                      <JointsGrid />
                  </div>
             </div>

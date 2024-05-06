@@ -3,6 +3,8 @@ import {useParams} from "react-router-dom";
 import Point from "./Point";
 import { List } from "flowbite-react";
 import AddPointBtn from "./AddPointBtn";
+import { Button } from "flowbite-react";
+
 
 function PointList(){
 
@@ -11,8 +13,7 @@ function PointList(){
 
     const [pointList, setPointList] = useState([])
     const [newPoint, setNewPoint] = useState('')
-
-    console.log(id)
+    const [deletedPoint, setDeletedPoint] = useState('')
 
     const url = new URL('http://localhost:5000/api/trajectory/'+ parseId + '/points');
 
@@ -24,19 +25,22 @@ function PointList(){
             data => {
                 setPointList(data.result)
             }
-        ).catch()}
+        ).catch(
+        )}
 
         fetchData()
         setNewPoint('')
-    }, [newPoint]);
+        setDeletedPoint('')
+        console.log('aggiornata')
+    }, [newPoint, deletedPoint]);
 
 
     return (
         <>
           <AddPointBtn newPoint={newPoint} setNewPoint={setNewPoint}/>
-          <List unstyled className="max-w-sm divide-y ">
+          <List unstyled className=" divide-y">
             {pointList.map( (point, index) => (
-                <Point key={index} point={point} />
+                     <Point key={index} point={point} deletedPoint={deletedPoint} setDeletedPoint={setDeletedPoint}/>
             ))}
           </List>
         </>

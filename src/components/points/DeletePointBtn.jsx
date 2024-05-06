@@ -4,18 +4,15 @@ import { Button } from "flowbite-react";
 
 
 
-function AddPointBtn({setNewPoint}){
-     const {id} = useParams()
-     const parseId = parseInt(id)
-
-     const url = new URL('http://localhost:5000/api/trajectory/'+parseId+'/save-point');
+function DeletePointBtn({id, setDeletedPoint}){
+    const url = new URL('http://localhost:5000/api/points/'+id);
 
     const handleClick = () => {
-        fetch(url).then(
+        fetch(url, {method : 'DELETE'}).then(
             res => res.json()
         ).then(
             data => {
-                setNewPoint(data.message)
+                setDeletedPoint(data.message)
             }
         ).catch(
         )}
@@ -26,11 +23,11 @@ function AddPointBtn({setNewPoint}){
         <>
             <div className="flex justify-center">
                <Button onClick={handleClick}  color="light" className="my-4">
-                   Acquisisci posizione Robot
+                   Elimina
                </Button>
             </div>
         </>
     )
 }
 
-export default AddPointBtn
+export default DeletePointBtn
