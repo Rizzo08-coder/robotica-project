@@ -7,9 +7,12 @@ function Root(){
 
     return (
         <>
-            <JointPosition />
-
-            <JointsGrid />
+            <div className="flex justify-center mt-16">
+              <JointsGrid />
+            </div>
+            <div className="flex justify-center mt-6">
+               <JointPosition />
+            </div>
         </>
     )
 }
