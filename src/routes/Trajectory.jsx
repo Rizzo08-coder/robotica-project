@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {useParams} from "react-router-dom";
 import PointList from "../components/points/PointList"
 import JointsGrid from "../components/joints_controller/JointsGrid";
+import {Button} from "flowbite-react";
+import PlayTrajectoryBtn from "../components/trajectories/PlayTrajectoryBtn";
 
 
 function Trajectory(){
@@ -29,8 +31,11 @@ function Trajectory(){
 
     return (
         <>
-            <div className="text-center font-bold text-3xl mt-12 mb-2">
-              [{trajectory.id}] - {trajectory.name}
+            <div className="flex justify-center font-bold text-3xl mt-12 mb-2">
+                <div className="mr-4">
+                    [{trajectory.id}] - {trajectory.name}
+                </div>
+                <PlayTrajectoryBtn />
             </div>
             <div className="flex flex-row">
                  <div className="w-1/3 ">
