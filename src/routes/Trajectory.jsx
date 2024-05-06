@@ -29,12 +29,11 @@ function Trajectory(){
 
     return (
         <>
-            <div className="text-center font-bold text-3xl my-12">
+            <div className="text-center font-bold text-3xl mt-12 mb-2">
               [{trajectory.id}] - {trajectory.name}
             </div>
             <div className="flex flex-row">
                  <div className="w-1/4 ">
-                     <AddPointBtn />
                      <PointList />
                  </div>
                  <div className="w-3/4 mt-32">
