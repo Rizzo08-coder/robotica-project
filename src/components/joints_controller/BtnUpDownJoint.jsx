@@ -13,11 +13,11 @@ function BtnUpDownJoint(props) {
         'joint_4' : props.joint_4,
         'joint_5' : props.joint_5,
         'joint_6' : props.joint_6,
-        'joint_abs' : props.joint_abs
+        'joint_abs' : props.joint_abs,
     }
 
     //construzione url con parametri
-    const url = new URL('http://localhost:3000/api/move-joints');
+    const url = new URL('http://localhost:5000/api/move-joints');
     Object.keys(requestData).forEach(key => url.searchParams.append(key, requestData[key]));
 
     console.log(url)
