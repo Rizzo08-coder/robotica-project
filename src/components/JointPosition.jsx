@@ -49,7 +49,7 @@ function JointPosition() {
                           <Typography id="continuous-slider">
                              Joint{index+1}
                           </Typography>
-                          <Slider aria-label="Joint Position" value={element.position} min={element.min} max={element.max}/>
+                          <Slider aria-label="Joint Position" value={element.position} min={element.min} max={element.max} valueLabelDisplay="auto"/>
                     </Box>
                 ))}
             </div>
