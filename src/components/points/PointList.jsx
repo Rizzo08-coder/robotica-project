@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from "react-router-dom";
 import Point from "./Point";
+import { List } from "flowbite-react";
 
 function PointList(){
 
@@ -30,10 +31,11 @@ function PointList(){
 
     return (
         <>
-            <br/>
+          <List unstyled className="max-w-sm divide-y ">
             {pointList.map( (point, index) => (
                 <Point key={index} point={point} />
             ))}
+          </List>
 
         </>
     )

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from "react-router-dom";
 import PointList from "../components/points/PointList"
-import { List } from "flowbite-react";
+import JointsGrid from "../components/joints_controller/JointsGrid";
 
 
 function Trajectory(){
@@ -29,16 +29,18 @@ function Trajectory(){
 
     return (
         <>
-
-            <div className="text-center font-bold text-3xl">
+            <div className="text-center font-bold text-3xl my-12">
               [{trajectory.id}] - {trajectory.name}
             </div>
-
-
-            <List unstyled className="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
-                <PointList id={trajectory.id}/>
-            </List>
-
+            <div className="flex flex-row">
+                 <div className="w-1/4 ">
+                     <AddPointBtn />
+                     <PointList />
+                 </div>
+                 <div className="w-3/4 mt-32">
+                     <JointsGrid />
+                 </div>
+            </div>
         </>
     )
 }
