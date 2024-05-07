@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import JointController from "./JointController";
+import MyContext from '../StepJoint';
 
 function JointsGrid(){
 
-    const step = 10.0
-    const step_hand = 2.0
+    const {stepJoint, setStepJoint, stepHand, setStepHand, handleChangeStepJoint, handleChangeStepHand} = useContext(MyContext)
+    const step = parseFloat(stepJoint)
+    const step_hand = parseFloat(stepHand)
 
     const jointControllerValues = [
         { name: "J1", joint_1_plus:step, joint_1_minus:-step, joint_2_plus:0.0, joint_2_minus:0.0, joint_3_plus:0.0, joint_3_minus:0.0, joint_4_plus:0.0, joint_4_minus:0.0, joint_5_plus:0.0, joint_5_minus:0.0, joint_6_plus:0.0, joint_6_minus:0.0, hand_plus:0.0, hand_minus:0.0},

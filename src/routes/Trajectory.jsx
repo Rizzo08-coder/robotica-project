@@ -2,10 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {useParams} from "react-router-dom";
 import PointList from "../components/points/PointList"
 import JointsGrid from "../components/joints_controller/JointsGrid";
-import {Button} from "flowbite-react";
 import PlayTrajectoryBtn from "../components/trajectories/PlayTrajectoryBtn";
 import JointPosition from "../components/JointPosition";
-import TrajectoryList from "../components/trajectories/TrajectoryList";
 
 
 function Trajectory(){
