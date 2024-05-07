@@ -13,6 +13,7 @@ function BtnUpDownJoint(props) {
         'joint_4' : props.joint_4,
         'joint_5' : props.joint_5,
         'joint_6' : props.joint_6,
+        'hand' : props.hand,
         'joint_abs' : props.joint_abs,
     }
 

@@ -4,7 +4,7 @@ import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-const socket = io("ws://localhost:5000", {
+const socket = io("ws://localhost:5001", {
   reconnectionDelayMax: 10000
 });
 
@@ -15,6 +15,7 @@ const joints_bound = [
         { name: "J4", min:-170.0, max:165.0 },
         { name: "J5", min:-86.0, max:125.0 },
         { name: "J6", min:-160.0, max:160.0 },
+        { name: "HAND", min:0.15, max:29.85 }
     ]
 
 
