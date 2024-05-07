@@ -9,13 +9,13 @@ const socket = io("ws://localhost:5001", {
 });
 
 const joints_bound = [
-        { name: "J1", min:-140.0, max:140.0 },
-        { name: "J2", min:-50.0, max:90.0 },
-        { name: "J3", min:25.0, max:130.0 },
-        { name: "J4", min:-170.0, max:165.0 },
-        { name: "J5", min:-86.0, max:125.0 },
-        { name: "J6", min:-160.0, max:160.0 },
-        { name: "HAND", min:0.15, max:29.85 }
+        { name: "Joint-1", min:-140.0, max:140.0 },
+        { name: "Joint-2", min:-50.0, max:90.0 },
+        { name: "Joint-3", min:25.0, max:130.0 },
+        { name: "Joint-4", min:-170.0, max:165.0 },
+        { name: "Joint-5", min:-86.0, max:125.0 },
+        { name: "Joint-6", min:-160.0, max:160.0 },
+        { name: "Hand", min:0.15, max:29.85 }
     ]
 
 
@@ -46,14 +46,18 @@ function JointPosition() {
         <>
             <div>
                 {positions.map((element, index) => (
-                        <Box sx={{ width: 200 }}>
+                        <Box sx={{ width: 200, height:50 }}>
                           <Typography id="continuous-slider">
-                             Joint{index+1}
+                              {element.name}
                           </Typography>
                           <Slider aria-label="Joint Position" value={element.position} min={element.min} max={element.max} valueLabelDisplay="auto"/>
                     </Box>
                 ))}
             </div>
+
+            <div className="fixed bottom-0 p-4">
+            </div>
+
         </>
     )
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import {List, Avatar} from "flowbite-react";
-import DeletePointBtn from "../points/DeletePointBtn";
 import ViewTrajectoryBtn from "./ViewTrajectoryBtn";
 
 function TrajectoryElement({trajectory}){

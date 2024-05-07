@@ -27,7 +27,6 @@ function TrajectoryList(){
 
     return (
         <>
-            <AddTrajectory />
           <List unstyled className="max-w-lg divide-y">
             {trajectoryList.map( (trajectory, index) => (
                      <TrajectoryElement key={index} trajectory={trajectory}/>

@@ -37,12 +37,14 @@ function PointList(){
 
     return (
         <>
-          <AddPointBtn newPoint={newPoint} setNewPoint={setNewPoint}/>
-          <List unstyled className=" divide-y">
-            {pointList.map( (point, index) => (
-                     <Point key={index} point={point} deletedPoint={deletedPoint} setDeletedPoint={setDeletedPoint}/>
-            ))}
-          </List>
+          <div className="flex flex-col">
+              <AddPointBtn newPoint={newPoint} setNewPoint={setNewPoint}/>
+              <List unstyled className="max-w-lg divide-y">
+                    {pointList.map( (point, index) => (
+                        <Point key={index} point={point} deletedPoint={deletedPoint} setDeletedPoint={setDeletedPoint}/>
+                     ))}
+              </List>
+          </div>
         </>
     )
 }

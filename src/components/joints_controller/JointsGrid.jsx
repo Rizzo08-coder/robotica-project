@@ -4,7 +4,7 @@ import JointController from "./JointController";
 function JointsGrid(){
 
     const step = 10.0
-    const step_hand = 2
+    const step_hand = 2.0
 
     const jointControllerValues = [
         { name: "J1", joint_1_plus:step, joint_1_minus:-step, joint_2_plus:0.0, joint_2_minus:0.0, joint_3_plus:0.0, joint_3_minus:0.0, joint_4_plus:0.0, joint_4_minus:0.0, joint_5_plus:0.0, joint_5_minus:0.0, joint_6_plus:0.0, joint_6_minus:0.0, hand_plus:0.0, hand_minus:0.0},
@@ -19,7 +19,7 @@ function JointsGrid(){
     return (
         <>
             <div className="flex justify-center items-center">
-                <div className="md:grid md:grid-cols-3 md:gap-12">
+                <div className="md:grid md:grid-cols-1 md:gap-12">
                    {jointControllerValues.map((jointValues, index) => (
                         <JointController key={index} name={jointValues.name} {...jointValues} joint_abs="false" />
                     ))}

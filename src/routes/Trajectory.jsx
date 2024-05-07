@@ -5,6 +5,7 @@ import JointsGrid from "../components/joints_controller/JointsGrid";
 import {Button} from "flowbite-react";
 import PlayTrajectoryBtn from "../components/trajectories/PlayTrajectoryBtn";
 import JointPosition from "../components/JointPosition";
+import TrajectoryList from "../components/trajectories/TrajectoryList";
 
 
 function Trajectory(){
@@ -33,22 +34,22 @@ function Trajectory(){
     return (
         <>
 
+            <div className="fixed top-0 left-0 p-4 bg-gray-200 shadow-md h-screen rounded-md">
+                <JointsGrid/>
+            </div>
+            <div className="fixed top-0 right-0 p-4 bg-gray-200 shadow-md rounded-md h-screen ">
+                <JointPosition/>
+            </div>
+
             <div className="flex justify-center font-bold text-3xl mt-12 mb-2">
                 <div className="mr-4">
                     [{trajectory.id}] - {trajectory.name}
                 </div>
-                <PlayTrajectoryBtn />
+                <PlayTrajectoryBtn/>
             </div>
-            <div className="flex flex-row">
-                 <div className="w-1/3 ">
-                     <PointList />
-                 </div>
-                 <div className="w-2/3 mt-32">
-                     <JointsGrid />
-                     <div className="mt-6 flex justify-center">
-                              <JointPosition />
-                     </div>
-                 </div>
+
+            <div className="flex justify-center mt-6">
+                <PointList/>
             </div>
         </>
     )
