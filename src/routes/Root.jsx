@@ -15,7 +15,9 @@ function Root(){
             </div>
             <StepJoint>
                 <div className="fixed top-0 left-0 py-4 px-8 bg-gray-200 shadow-md h-screen rounded-md">
-                    <JointsGrid/>
+                    <div className="flex justify-center items-center h-screen">
+                       <JointsGrid/>
+                    </div>
                 </div>
                 <div className="fixed bottom-0 right-0 py-8 px-8 z-50">
                     <StepModifier/>

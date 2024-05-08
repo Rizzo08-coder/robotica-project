@@ -4,6 +4,8 @@ import PointList from "../components/points/PointList"
 import JointsGrid from "../components/joints_controller/JointsGrid";
 import PlayTrajectoryBtn from "../components/trajectories/PlayTrajectoryBtn";
 import JointPosition from "../components/JointPosition";
+import StepModifier from "../components/StepModifier";
+import {StepJoint} from "../components/StepJoint";
 
 
 function Trajectory(){
@@ -32,10 +34,17 @@ function Trajectory(){
     return (
         <>
 
-            <div className="fixed top-0 left-0 p-4 bg-gray-200 shadow-md h-screen rounded-md">
-                <JointsGrid/>
-            </div>
-            <div className="fixed top-0 right-0 p-4 bg-gray-200 shadow-md rounded-md h-screen ">
+            <StepJoint>
+                <div className="fixed top-0 left-0 py-4 px-8 bg-gray-200 shadow-md h-screen rounded-md">
+                    <div className="flex justify-center items-center h-screen">
+                       <JointsGrid/>
+                    </div>
+                </div>
+                <div className="fixed bottom-0 right-0 py-8 px-8 z-50">
+                    <StepModifier/>
+                </div>
+            </StepJoint>
+            <div className="fixed top-0 right-0 p-4 px-8 bg-gray-200 shadow-md rounded-md h-screen ">
                 <JointPosition/>
             </div>
 

@@ -20,13 +20,11 @@ function JointsGrid(){
 
     return (
         <>
-            <div className="flex justify-center items-center">
                 <div className="md:grid md:grid-cols-1 md:gap-12">
                    {jointControllerValues.map((jointValues, index) => (
                         <JointController key={index} name={jointValues.name} {...jointValues} joint_abs="false" />
                     ))}
                 </div>
-            </div>
         </>
     )
 }
