@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import {List, Avatar} from "flowbite-react";
 import ViewTrajectoryBtn from "./ViewTrajectoryBtn";
+import DeleteTrajectoryBtn from "./DeleteTrajectoryBtn";
 
-function TrajectoryElement({trajectory}){
+function TrajectoryElement({trajectory, setDeletedTrajectory}){
+
+
     return (
         <>
             <List.Item className="p-3 sm:p-4 bg-gray-200">
@@ -13,6 +16,7 @@ function TrajectoryElement({trajectory}){
                             <div className=" text-sm font-medium text-gray-900 mr-4">name = {trajectory.name}</div>
                         </div>
                     <ViewTrajectoryBtn id={trajectory.id}/>
+                    <DeleteTrajectoryBtn id={trajectory.id} setDeletedTrajectory={setDeletedTrajectory}/>
                 </div>
             </List.Item>
 

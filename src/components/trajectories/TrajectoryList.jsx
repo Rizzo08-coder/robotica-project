@@ -6,6 +6,7 @@ import TrajectoryElement from "./TrajectoryElement";
 function TrajectoryList(){
 
     const [trajectoryList, setTrajectoryList] = useState([])
+    const [deletedTrajectory, setDeletedTrajectory] = useState('')
 
     const url = new URL('http://localhost:5000/api/trajectories');
 
@@ -17,19 +18,19 @@ function TrajectoryList(){
             data => {
                 setTrajectoryList(data.result)
             }
-        ).catch(
-        )}
+        ).catch()}
 
         fetchData()
-        console.log('caricata lista traiettorie')
-    }, []);
+        setDeletedTrajectory('')
+        console.log('aggiornata')
+    }, [deletedTrajectory]);
 
 
     return (
         <>
           <List unstyled className="max-w-lg divide-y">
             {trajectoryList.map( (trajectory, index) => (
-                     <TrajectoryElement key={index} trajectory={trajectory}/>
+                     <TrajectoryElement key={index} trajectory={trajectory} deletedTrajectory={deletedTrajectory} setDeletedTrajectory={setDeletedTrajectory}/>
             ))}
           </List>
         </>

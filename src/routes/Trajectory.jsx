@@ -6,6 +6,7 @@ import PlayTrajectoryBtn from "../components/trajectories/PlayTrajectoryBtn";
 import JointPosition from "../components/JointPosition";
 import StepModifier from "../components/StepModifier";
 import {StepJoint} from "../components/StepJoint";
+import BackRootBtn from "../BackRootBtn";
 
 
 function Trajectory(){
@@ -33,22 +34,8 @@ function Trajectory(){
 
     return (
         <>
-
-            <StepJoint>
-                <div className="fixed top-0 left-0 py-4 px-8 bg-gray-200 shadow-md h-screen rounded-md">
-                    <div className="flex justify-center items-center h-screen">
-                       <JointsGrid/>
-                    </div>
-                </div>
-                <div className="fixed bottom-0 right-0 py-8 px-8 z-50">
-                    <StepModifier/>
-                </div>
-            </StepJoint>
-            <div className="fixed top-0 right-0 p-4 px-8 bg-gray-200 shadow-md rounded-md h-screen ">
-                <JointPosition/>
-            </div>
-
             <div className="flex justify-center font-bold text-3xl mt-12 mb-2">
+               <BackRootBtn />
                 <div className="mr-4">
                     [{trajectory.id}] - {trajectory.name}
                 </div>

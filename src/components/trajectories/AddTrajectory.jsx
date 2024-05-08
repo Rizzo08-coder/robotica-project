@@ -46,7 +46,7 @@ function AddTrajectory(){
                     <TextInput id="trajectory-name" type="text" value={trajectoryName} placeholder="Insert new trajectory" onChange={handleNameTrajectoryChange} required/>
                 </div>
                 <div className="w-1/5">
-                     <Button type="submit" className="w-full text-center" >Enter</Button>
+                     <Button type="submit" color="blue" className="w-full text-center" >Enter</Button>
                 </div>
             </form>
         </>
