@@ -12,7 +12,7 @@ function ViewTrajectoryBtn({id}){
         <>
             <div className="flex justify-center">
                <Link to={link}>
-                   <Button color="light" className="my-4">
+                   <Button size="sm" className="my-4">
                        View
                    </Button>
                </Link>

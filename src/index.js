@@ -30,7 +30,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
         <StepJoint>
-            <div className="fixed top-0 left-0 py-4 px-8 bg-gray-200 shadow-md h-screen rounded-md">
+            <div className="fixed top-0 left-0 py-4 px-8 bg-gray-200 shadow-md h-screen rounded-r-md">
                 <div className="flex justify-center items-center h-screen">
                     <JointsGrid/>
                 </div>
@@ -39,7 +39,7 @@ root.render(
                 <StepModifier/>
             </div>
         </StepJoint>
-        <div className="fixed top-0 right-0 p-4 px-8 bg-gray-200 shadow-md rounded-md h-screen ">
+        <div className="fixed top-0 right-0 p-4 px-8 bg-gray-200 shadow-md rounded-l-md h-screen ">
             <JointPosition/>
         </div>
 

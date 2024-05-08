@@ -1,10 +1,6 @@
 import React from 'react'
-import JointPosition from "../components/JointPosition";
-import JointsGrid from "../components/joints_controller/JointsGrid";
 import TrajectoryList from "../components/trajectories/TrajectoryList";
 import AddTrajectory from "../components/trajectories/AddTrajectory";
-import {StepJoint} from "../components/StepJoint"
-import StepModifier from "../components/StepModifier";
 
 function Root(){
 

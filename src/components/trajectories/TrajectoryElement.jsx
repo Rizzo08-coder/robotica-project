@@ -8,7 +8,7 @@ function TrajectoryElement({trajectory, setDeletedTrajectory}){
 
     return (
         <>
-            <List.Item className="p-3 sm:p-4 bg-gray-200">
+            <List.Item className="p-3 sm:p-4 bg-gray-200 rounded-md">
                 <div className="flex items-center space-x-4 rtl:space-x-reverse">
                     <Avatar img="/trajectory.png" alt="trajectory_img" size="sm" className="w-1/6 mx-4" />
                         <div className="w-5/6 grid grid-cols-2 flex items-center">

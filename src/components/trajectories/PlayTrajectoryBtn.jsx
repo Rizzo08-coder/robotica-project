@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useParams} from "react-router-dom";
-import { Button } from "flowbite-react";
+import {Avatar, Button} from "flowbite-react";
 
 
 
@@ -27,9 +27,11 @@ function PlayTrajectoryBtn(){
 
     return (
         <>
-               <Button onClick={handleClick}  color="light" >
-                   Esegui Traiettoria
+            <div className="flex justify-center place-self-center items-center">
+               <Button pill onClick={handleClick}  color="gray" >
+                   <Avatar img="/play-icon.png" alt="back-link" size="xs" className="" />
                </Button>
+            </div>
         </>
     )
 }

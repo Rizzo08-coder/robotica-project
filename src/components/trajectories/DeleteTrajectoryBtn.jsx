@@ -21,8 +21,8 @@ function DeleteTrajectoryBtn({id, setDeletedTrajectory}){
 
     return (
         <>
-            <div className="flex justify-center">
-                   <Button onClick={handleClick} color="red" className="my-4">
+            <div className="flex justify-center text-xs">
+                   <Button onClick={handleClick} color="failure" size="xs" className="my-4">
                        Delete
                    </Button>
             </div>
