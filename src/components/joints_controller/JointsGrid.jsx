@@ -20,7 +20,7 @@ function JointsGrid(){
 
     return (
         <>
-                <div className="md:grid md:grid-cols-1 md:gap-12">
+                <div className="grid grid-cols-1 gap-12">
                    {jointControllerValues.map((jointValues, index) => (
                         <JointController key={index} name={jointValues.name} {...jointValues} joint_abs="false" />
                     ))}

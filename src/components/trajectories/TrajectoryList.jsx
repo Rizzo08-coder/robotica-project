@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { List } from "flowbite-react";
 import TrajectoryElement from "./TrajectoryElement";
+import LoadingIcon from "../LoadingIcon";
 
 
 function TrajectoryList(){
+
+    const [loaded, setLoaded] = useState(false)
 
     const [trajectoryList, setTrajectoryList] = useState([])
     const [deletedTrajectory, setDeletedTrajectory] = useState('')
@@ -17,6 +20,7 @@ function TrajectoryList(){
         ).then(
             data => {
                 setTrajectoryList(data.result)
+                setLoaded(true)
             }
         ).catch()}
 
@@ -25,8 +29,15 @@ function TrajectoryList(){
         console.log('aggiornata')
     }, [deletedTrajectory]);
 
+    if (!loaded){
+        return (
+            <div className="mt-16">
+                 <LoadingIcon />
+            </div>
+        )
+    }
 
-    return (
+    else return (
         <>
           <List unstyled className="max-w-lg divide-y">
             {trajectoryList.map( (trajectory, index) => (

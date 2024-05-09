@@ -3,6 +3,7 @@ import { io } from "socket.io-client";
 import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import LoadingIcon from "./LoadingIcon";
 
 const socket = io("ws://localhost:5001", {
   reconnectionDelayMax: 10000
@@ -21,7 +22,10 @@ const joints_bound = [
 
 function JointPosition() {
 
+    const [loaded, setLoaded] = useState(false)
+
     const [positions, setPositions] = useState([])
+
     useEffect(() => {
         socket.on("robot_position", function (positions) {
             const merged_array = joints_bound.map((joint, index) => ({ //FIXME:trovare modo migliore
@@ -30,6 +34,7 @@ function JointPosition() {
              }));
 
             setPositions([...merged_array]);
+            setLoaded(true)
 
         })
 
@@ -41,8 +46,10 @@ function JointPosition() {
 
     console.log(positions)
 
-
-    return (
+    if (!loaded){
+        return <LoadingIcon />
+    }
+    else return (
         <>
             <div>
                 {positions.map((element, index) => (

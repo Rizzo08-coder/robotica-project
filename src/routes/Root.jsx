@@ -1,6 +1,7 @@
 import React from 'react'
 import TrajectoryList from "../components/trajectories/TrajectoryList";
 import AddTrajectory from "../components/trajectories/AddTrajectory";
+import LoadingIcon from "../components/LoadingIcon";
 
 function Root(){
 

@@ -4,12 +4,15 @@ import Point from "./Point";
 import { List } from "flowbite-react";
 import AddPointBtn from "./AddPointBtn";
 import { Button } from "flowbite-react";
+import LoadingIcon from "../LoadingIcon";
 
 
 function PointList(){
 
     const {id} = useParams()
     const parseId = parseInt(id)
+
+    const [loaded, setLoaded] = useState(false)
 
     const [pointList, setPointList] = useState([])
     const [newPoint, setNewPoint] = useState('')
@@ -24,6 +27,7 @@ function PointList(){
         ).then(
             data => {
                 setPointList(data.result)
+                setLoaded(true)
             }
         ).catch(
         )}
@@ -35,7 +39,14 @@ function PointList(){
     }, [newPoint, deletedPoint]);
 
 
-    return (
+    if (!loaded){
+        return (
+            <div className="mt-16">
+                <LoadingIcon />
+            </div>
+        )
+    }
+    else return (
         <>
           <div className="flex flex-col">
               <AddPointBtn newPoint={newPoint} setNewPoint={setNewPoint}/>
