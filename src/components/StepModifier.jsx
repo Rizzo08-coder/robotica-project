@@ -31,7 +31,7 @@ function StepModifier(){
                         color="error"
                     />
                 </Box>
-
+                <div className="mt-2">
                 <Box sx={{ width: 200, height:50 }}>
                     <Typography id="slider" gutterBottom>
                         Step Hand
@@ -47,6 +47,7 @@ function StepModifier(){
                         color="error"
                     />
                 </Box>
+                </div>
 
 
 

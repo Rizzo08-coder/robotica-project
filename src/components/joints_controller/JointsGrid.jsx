@@ -25,7 +25,7 @@ function JointsGrid(){
 
     const url = new URL('http://localhost:5000/api/actual-joints-pos');
 
-    useEffect(() => {  //determine initial position of joints on first component mount
+    useEffect(() => {  //position of joints on first mount component
 
         fetch(url).then(
             res => res.json()
