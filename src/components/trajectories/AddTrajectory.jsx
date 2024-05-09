@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 function AddTrajectory(){
 
     const [trajectoryName, setTrajectoryName] = useState("");
+    const [errorName, setErrorName] = useState(false);
     const navigate = useNavigate();
 
 
@@ -28,12 +29,21 @@ function AddTrajectory(){
        event.preventDefault()
 
        fetch(url).then(
-            res => res.json()
+            res => {
+                if (!res.ok){
+                    throw new Error('errore nella richiesta')
+                }
+                return res.json()
+            }
         ).then(
             data => {
-                navigate(`/trajectory/${data.id}`)
+                    navigate(`/trajectory/${data.id}`)
             }
         ).catch(
+            error => {
+                console.log('name already exists')
+                setErrorName(true)
+            }
         )
    }
 
@@ -43,10 +53,24 @@ function AddTrajectory(){
         <>
             <form className="flex flex-row w-full max-w-lg" onSubmit={handleSubmit}>
                 <div className="w-4/5 mr-4">
-                    <TextInput id="trajectory-name" type="text" value={trajectoryName} placeholder="Insert new trajectory" onChange={handleNameTrajectoryChange} required/>
+                    {errorName ?
+                        <TextInput id="trajectory-name" type="text" value={trajectoryName}
+                                color="failure"
+                                helperText={
+                                 <>
+                                Trajectory name already exists!
+                                </>
+                        } onChange={handleNameTrajectoryChange}
+                              placeholder="Insert new trajectory" required/>
+                        :
+                    <TextInput id="trajectory-name" type="text" value={trajectoryName}
+                               placeholder="Insert new trajectory" onChange={handleNameTrajectoryChange}
+                               required/>
+
+                    }
                 </div>
                 <div className="w-1/5">
-                     <Button type="submit" color="blue" className="w-full text-center" >Enter</Button>
+                    <Button type="submit" color="blue" className="w-full text-center">Enter</Button>
                 </div>
             </form>
         </>

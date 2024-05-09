@@ -1,10 +1,14 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import JointController from "./JointController";
 import MyContext from '../StepJoint';
+import LoadingIcon from "../LoadingIcon";
 
 function JointsGrid(){
 
-    const {stepJoint, setStepJoint, stepHand, setStepHand, handleChangeStepJoint, handleChangeStepHand} = useContext(MyContext)
+    const [positionJoints, setPositionJoints] = useState([])
+    const [isFetchingData, setIsFetchingData] = useState(false)
+
+    const {stepJoint, stepHand} = useContext(MyContext)
     const step = parseFloat(stepJoint)
     const step_hand = parseFloat(stepHand)
 
@@ -18,13 +22,41 @@ function JointsGrid(){
          { name: "Hand", joint_1_plus:0.0, joint_1_minus:0.0, joint_2_plus:0.0, joint_2_minus:0.0, joint_3_plus:0.0, joint_3_minus:0.0, joint_4_plus:0.0, joint_4_minus:0.0, joint_5_plus:0.0, joint_5_minus:0.0, joint_6_plus:0.0, joint_6_minus:0.0, hand_plus:step_hand, hand_minus:-step_hand},
     ]
 
+
+    const url = new URL('http://localhost:5000/api/actual-joints-pos');
+
+    useEffect(() => {  //determine initial position of joints on first component mount
+
+        fetch(url).then(
+            res => res.json()
+        ).then(
+            data => {
+                setPositionJoints(data.position)
+                console.log(positionJoints)
+            }
+        ).catch()
+
+    }, []); //dependency -> only on first mount
+
     return (
         <>
                 <div className="grid grid-cols-1 gap-12">
                    {jointControllerValues.map((jointValues, index) => (
-                        <JointController key={index} name={jointValues.name} {...jointValues} joint_abs="false" />
+                        <JointController key={index} name={jointValues.name} {...jointValues}
+                                         joint_abs="false"
+                                         positionJoints={positionJoints}
+                                         setPositionJoints={setPositionJoints}
+                                         stepJoint={step}
+                                         stepHand={step_hand}
+                                         isFetchingData={isFetchingData}
+                                         setIsFetchingData={setIsFetchingData} />
                     ))}
                 </div>
+            {isFetchingData  && (
+                <div className="mt-6">
+                   <LoadingIcon />
+                </div>
+            )}
         </>
     )
 }

@@ -3,8 +3,8 @@ import React, { createContext, useState } from 'react';
 const MyContext = createContext("");
 
 export const StepJoint = ({ children }) => {
-  const [stepJoint, setStepJoint] = useState('10.0');
-  const [stepHand, setStepHand] = useState('1.0')
+  const [stepJoint, setStepJoint] = useState(10.0);
+  const [stepHand, setStepHand] = useState(1.0)
 
   const handleChangeStepJoint = (event, newStepJoint) => {
         setStepJoint(newStepJoint);

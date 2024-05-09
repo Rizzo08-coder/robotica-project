@@ -53,7 +53,7 @@ function JointPosition() {
         <>
             <div>
                 {positions.map((element, index) => (
-                        <Box sx={{ width: 200, height:50 }}>
+                    <Box key={index}  sx={{ width: 200, height:50 }}>
                           <Typography id="continuous-slider">
                               {element.name}
                           </Typography>

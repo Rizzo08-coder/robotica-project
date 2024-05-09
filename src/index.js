@@ -34,7 +34,7 @@ root.render(
     <>
         <StepJoint>
             <div className="flex flex-col justify-start items-start fixed top-0 left-0 bg-gray-200 py-4 px-8  shadow-md rounded-r-md overflow-y-auto max-h-screen">
-                <div className=" ">
+                <div className="">
                     <JointsGrid />
                 </div>
             </div>

@@ -1,10 +1,21 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Button } from "flowbite-react";
+
+
+const joints_bound = [
+        { name: "J1", min:-140.0, max:140.0 },
+        { name: "J2", min:-50.0, max:90.0 },
+        { name: "J3", min:25.0, max:130.0 },
+        { name: "J4", min:-170.0, max:165.0 },
+        { name: "J5", min:-86.0, max:125.0 },
+        { name: "J6", min:-160.0, max:160.0 },
+        { name: "Hand", min:0.15, max:29.85 }
+    ]
 
 
 function BtnUpDownJoint(props) {
 
-    const [data, setData] = useState({})
+    const [btnDisabled, setBtnDisabled] = useState(false)
 
     const requestData = {
         'joint_1' : props.joint_1,
@@ -21,21 +32,55 @@ function BtnUpDownJoint(props) {
     const url = new URL('http://localhost:5000/api/move-joints');
     Object.keys(requestData).forEach(key => url.searchParams.append(key, requestData[key]));
 
-    console.log(url)
 
     const handleClick = () => {
+        props.setIsFetchingData(true)
         fetch(url).then(
             res => res.json()
         ).then(
             data => {
-                setData(data)
-                console.log(data)
+                props.setPositionJoints(data.position)
+                console.log(props.positionJoints)
+                props.setIsFetchingData(false)
             }
-        ).catch()}
+        ).catch()
+    }
 
-    return (
+    useEffect(() => {
+        determineButtonDisabled()
+        console.log(btnDisabled)
+    }, [props.positionJoints, props.stepJoint, props.stepHand]);
+
+    const determineButtonDisabled = () => {
+        let isDisabled = false
+        joints_bound.forEach((joint, index) => {
+          if (props.name == joint.name){
+              const delta = props.name == 'Hand' ? props.stepHand : props.stepJoint
+            if (props.buttonText == '-'){
+                if(props.positionJoints[index] - delta < joints_bound[index].min)
+                    isDisabled = true
+            }else if (props.buttonText == '+'){
+                if (props.positionJoints[index] + delta > joints_bound[index].max)
+                    isDisabled = true
+            }
+          }
+        })
+        setBtnDisabled(isDisabled)
+    }
+
+
+    if (props.isFetchingData){
+        return (
+            <> <Button color="light" disabled>
+                    {props.buttonText}
+                </Button>
+            </>
+        )
+    }
+
+    else return (
             <>
-                <Button onClick={handleClick} color="light">
+                <Button onClick={handleClick} color="light" disabled={btnDisabled}>
                     {props.buttonText}
                 </Button>
             </>
