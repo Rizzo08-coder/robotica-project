@@ -1,5 +1,6 @@
 import React from "react";
-import { Button } from "flowbite-react";
+import { Button } from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 
@@ -22,7 +23,7 @@ function DeleteTrajectoryBtn({id, setDeletedTrajectory, disableDelete}){
     return (
         <>
             <div className="flex justify-center text-xs">
-                   <Button onClick={handleClick} color="failure" size="xs" className="my-4" disabled={disableDelete}>
+                   <Button onClick={handleClick} ariant="outlined" startIcon={<DeleteIcon />} variant="contained" color="error" className="my-4" disabled={disableDelete}>
                        Delete
                    </Button>
             </div>

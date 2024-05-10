@@ -1,8 +1,7 @@
 import React, {useState} from "react";
-import { Button, TextInput } from "flowbite-react";
+import {Button} from "@mui/material";
 import { useNavigate } from 'react-router-dom';
-
-
+import TextField from '@mui/material/TextField';
 
 
 function AddTrajectory(){
@@ -54,23 +53,28 @@ function AddTrajectory(){
             <form className="flex flex-row w-full max-w-lg" onSubmit={handleSubmit}>
                 <div className="w-4/5 mr-4">
                     {errorName ?
-                        <TextInput id="trajectory-name" type="text" value={trajectoryName}
-                                color="failure"
-                                helperText={
-                                 <>
-                                Trajectory name already exists!
-                                </>
-                        } onChange={handleNameTrajectoryChange}
-                              placeholder="Insert new trajectory" required/>
+                         <TextField fullWidth required error
+                                  size="small"
+                                  id="trajectory-name-error"
+                                  label="Error"
+                                  helperText="Trajectory name already exists!"
+                                  onChange={handleNameTrajectoryChange}
+                                    value={trajectoryName}/>
                         :
-                    <TextInput id="trajectory-name" type="text" value={trajectoryName}
-                               placeholder="Insert new trajectory" onChange={handleNameTrajectoryChange}
-                               required/>
+
+                         <TextField fullWidth required
+                                    id="trajectory-name"
+                                    label="Trajectory name"
+                                    size="small"
+                                    value={trajectoryName}
+                                    onChange={handleNameTrajectoryChange}
+                                    />
+
 
                     }
                 </div>
                 <div className="w-1/5">
-                    <Button type="submit" color="blue" className="w-full text-center">Enter</Button>
+                    <Button type="submit" variant="contained" size="medium" className="w-full text-center">Enter</Button>
                 </div>
             </form>
         </>

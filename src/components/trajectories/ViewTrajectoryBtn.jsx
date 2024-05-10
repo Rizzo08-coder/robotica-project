@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "flowbite-react";
+import { Button } from "@mui/material";
 
 
 
@@ -12,7 +12,7 @@ function ViewTrajectoryBtn({id}){
         <>
             <div className="flex justify-center">
                <Link to={link}>
-                   <Button size="sm" className="my-4">
+                   <Button variant="contained" className="my-4">
                        View
                    </Button>
                </Link>

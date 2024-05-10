@@ -21,7 +21,7 @@ function DeletePointBtn({id, setDeletedPoint, disableDelete}){
     return (
         <>
             <div className="flex justify-center">
-               <Button onClick={handleClick}  color="failure" className="my-4 text-xs" size="xs" disabled={disableDelete}>
+               <Button onClick={handleClick}  color="failure" className="my-4 text-xs" size="sm" disabled={disableDelete}>
                    Delete
                </Button>
             </div>
