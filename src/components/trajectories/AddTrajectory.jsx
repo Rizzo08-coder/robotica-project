@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import {Button} from "@mui/material";
-import { useNavigate } from 'react-router-dom';
-import TextField from '@mui/material/TextField';
-
+import {useNavigate} from 'react-router-dom';
+import {TextInput} from "flowbite-react";
 
 function AddTrajectory(){
 
@@ -51,25 +50,21 @@ function AddTrajectory(){
     return (
         <>
             <form className="flex flex-row w-full max-w-lg" onSubmit={handleSubmit}>
-                <div className="w-4/5 mr-4">
+                <div className="w-4/5 mr-4 mt-0.5">
                     {errorName ?
-                         <TextField fullWidth required error
-                                  size="small"
-                                  id="trajectory-name-error"
-                                  label="Error"
-                                  helperText="Trajectory name already exists!"
-                                  onChange={handleNameTrajectoryChange}
-                                    value={trajectoryName}/>
+                        <TextInput id="trajectory-name" type="text" value={trajectoryName}
+                                color="failure"
+                                   sizing="sm"
+                                helperText={
+                                 <>
+                                Trajectory name already exists!
+                                </>
+                        } onChange={handleNameTrajectoryChange}
+                              placeholder="Insert new trajectory" required/>
                         :
-
-                         <TextField fullWidth required
-                                    id="trajectory-name"
-                                    label="Trajectory name"
-                                    size="small"
-                                    value={trajectoryName}
-                                    onChange={handleNameTrajectoryChange}
-                                    />
-
+                    <TextInput id="trajectory-name" type="text" value={trajectoryName}
+                               placeholder="Insert new trajectory"  sizing="sm" onChange={handleNameTrajectoryChange}
+                               required/>
 
                     }
                 </div>

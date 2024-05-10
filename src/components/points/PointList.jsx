@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import {useParams} from "react-router-dom";
 import Point from "./Point";
 import { List } from "flowbite-react";
@@ -21,10 +21,12 @@ function PointList(){
     const [deletedPoint, setDeletedPoint] = useState('')
     const [isDeleted, setIsDeleted] = useState(false)
     const [isAdd, setIsAdd] = useState(false)
+    const [isInitialMount, setIsInitialMount] = useState(true);
 
     const url = new URL('http://localhost:5000/api/trajectory/'+ parseId + '/points');
 
     useEffect(() => {
+
         const fetchData = () => {
         fetch(url).then(
             res => res.json()
@@ -32,35 +34,52 @@ function PointList(){
             data => {
                 setPointList(data.result)
                 setLoaded(true)
+                if (!isInitialMount) {
+                   setIsAdd(true);
+                }
             }
         ).catch(
         )}
 
         fetchData()
         setNewPoint('')
-        setDeletedPoint('')
         console.log('aggiornata')
-    }, [newPoint, deletedPoint]);
+    }, [newPoint]);
 
      useEffect(() => {
-        if (deletedPoint != '') {
-            setIsDeleted(true)
+         const fetchData = () => {
+         fetch(url).then(
+            res => res.json()
+        ).then(
+            data => {
+                setPointList(data.result)
+                setLoaded(true)
+                if (!isInitialMount) {
+                   setIsDeleted(true);
+                }
+            }
+        ).catch(
+        )}
 
-            setTimeout(() => {
-                setIsDeleted(false)
-            }, 3000)
-        }
-    }, [deletedPoint])
+        fetchData()
+        setDeletedPoint('')
+        console.log('aggiornata')
+        setIsInitialMount(false)
+    }, [deletedPoint]);
+
+
+     useEffect(() => {
+         setTimeout(() => {
+                    setIsDeleted(false)
+                }, 2000)
+     }, [isDeleted])
 
     useEffect(() => {
-        if (newPoint != '') {
-            setIsAdd(true)
+         setTimeout(() => {
+                    setIsAdd(false)
+                }, 2000)
+     }, [isAdd])
 
-            setTimeout(() => {
-                setIsAdd(false)
-            }, 3000)
-        }
-    }, [newPoint])
 
 
     if (!loaded){

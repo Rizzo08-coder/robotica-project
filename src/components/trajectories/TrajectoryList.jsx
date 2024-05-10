@@ -13,6 +13,7 @@ function TrajectoryList(){
     const [trajectoryList, setTrajectoryList] = useState([])
     const [deletedTrajectory, setDeletedTrajectory] = useState('')
     const [isDeleted, setIsDeleted] = useState(false)
+    const [isInitialMount, setIsInitialMount] = useState(true);
 
     const url = new URL('http://localhost:5000/api/trajectories');
 
@@ -24,24 +25,24 @@ function TrajectoryList(){
             data => {
                 setTrajectoryList(data.result)
                 setLoaded(true)
+                if (!isInitialMount) {
+                   setIsDeleted(true);
+                }
             }
         ).catch()}
-
         fetchData()
         setDeletedTrajectory('')
-
         console.log('aggiornata')
+        setIsInitialMount(false)
     }, [deletedTrajectory]);
 
-    useEffect(() => {
-        if (deletedTrajectory != '') {
-            setIsDeleted(true)
 
-            setTimeout(() => {
-                setIsDeleted(false)
-            }, 4000)
-        }
-    }, [deletedTrajectory])
+    useEffect(() => {
+         setTimeout(() => {
+                    setIsDeleted(false)
+                }, 4000)
+     }, [isDeleted])
+
 
     if (!loaded){
         return (

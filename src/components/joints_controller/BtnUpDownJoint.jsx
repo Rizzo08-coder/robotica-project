@@ -71,7 +71,7 @@ function BtnUpDownJoint(props) {
 
     if (props.isFetchingData){
         return (
-            <> <Button color="light" disabled>
+            <> <Button color="light" disabled className="p-1.5 ">
                     {props.buttonText}
                 </Button>
             </>
@@ -80,8 +80,8 @@ function BtnUpDownJoint(props) {
 
     else return (
             <>
-                <Button onClick={handleClick} color="light" disabled={btnDisabled}>
-                    {props.buttonText}
+                <Button onClick={handleClick} color="light" disabled={btnDisabled}  className=" focus:ring-4 focus:ring-[#1976d2]">
+                    <div className="text-xl font-bold">{props.buttonText}</div>
                 </Button>
             </>
     )
