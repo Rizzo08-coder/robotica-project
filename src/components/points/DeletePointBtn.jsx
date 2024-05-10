@@ -3,7 +3,7 @@ import { Button } from "flowbite-react";
 
 
 
-function DeletePointBtn({id, setDeletedPoint}){
+function DeletePointBtn({id, setDeletedPoint, disableDelete}){
     const url = new URL('http://localhost:5000/api/points/'+id);
 
     const handleClick = () => {
@@ -21,7 +21,7 @@ function DeletePointBtn({id, setDeletedPoint}){
     return (
         <>
             <div className="flex justify-center">
-               <Button onClick={handleClick}  color="failure" className="my-4 text-xs" size="xs">
+               <Button onClick={handleClick}  color="failure" className="my-4 text-xs" size="xs" disabled={disableDelete}>
                    Delete
                </Button>
             </div>

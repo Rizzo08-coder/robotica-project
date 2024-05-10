@@ -3,7 +3,7 @@ import {List, Avatar, Button} from "flowbite-react";
 import DeletePointBtn from "./DeletePointBtn";
 
 
-function Point({point, setDeletedPoint}){
+function Point({point, setDeletedPoint, isDeletedPoint}){
     return (
         <>
             <List.Item className="p-3 sm:p-4 bg-gray-200 rounded-md">
@@ -19,7 +19,7 @@ function Point({point, setDeletedPoint}){
                             <div className="truncate text-sm font-medium text-gray-900 dark:text-white">J6 = {point.j6}</div>
                         </div>
                     </div>
-                    <DeletePointBtn setDeletedPoint={setDeletedPoint} id={point.id}/>
+                    <DeletePointBtn setDeletedPoint={setDeletedPoint} id={point.id} disableDelete={isDeletedPoint}/>
                 </div>
             </List.Item>
 

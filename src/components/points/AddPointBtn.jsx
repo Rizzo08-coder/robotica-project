@@ -4,7 +4,7 @@ import { Button } from "flowbite-react";
 
 
 
-function AddPointBtn({setNewPoint}){
+function AddPointBtn({setNewPoint, disableAdd}){
      const {id} = useParams()
      const parseId = parseInt(id)
 
@@ -25,7 +25,7 @@ function AddPointBtn({setNewPoint}){
     return (
         <>
             <div className="flex justify-center">
-               <Button onClick={handleClick}  color="warning" className="my-4">
+               <Button onClick={handleClick}  color="warning" className="my-4" disabled={disableAdd}>
                    Acquisisci posizione Robot
                </Button>
             </div>

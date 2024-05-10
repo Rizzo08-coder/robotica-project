@@ -3,7 +3,7 @@ import {List, Avatar} from "flowbite-react";
 import ViewTrajectoryBtn from "./ViewTrajectoryBtn";
 import DeleteTrajectoryBtn from "./DeleteTrajectoryBtn";
 
-function TrajectoryElement({trajectory, setDeletedTrajectory}){
+function TrajectoryElement({trajectory, setDeletedTrajectory, isDeletedTrajectory}){
 
 
     return (
@@ -16,7 +16,7 @@ function TrajectoryElement({trajectory, setDeletedTrajectory}){
                             <div className=" text-md font-bold text-gray-900 mr-4">{trajectory.name}</div>
                         </div>
                     <ViewTrajectoryBtn id={trajectory.id}/>
-                    <DeleteTrajectoryBtn id={trajectory.id} setDeletedTrajectory={setDeletedTrajectory}/>
+                    <DeleteTrajectoryBtn id={trajectory.id} setDeletedTrajectory={setDeletedTrajectory} disableDelete={isDeletedTrajectory}/>
                 </div>
             </List.Item>
 

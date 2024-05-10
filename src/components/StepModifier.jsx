@@ -27,7 +27,7 @@ function StepModifier(){
                         valueLabelDisplay="auto"
                         min={1}
                         max={20}
-                        step={0.1}
+                        step={0.01}
                         color="error"
                     />
                 </Box>
@@ -41,9 +41,9 @@ function StepModifier(){
                         onChange={handleChangeStepHand}
                         aria-labelledby="slider"
                         valueLabelDisplay="auto"
-                        min={0.05}
+                        min={0.01}
                         max={2.00}
-                        step={0.05}
+                        step={0.001}
                         color="error"
                     />
                 </Box>
