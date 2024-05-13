@@ -3,9 +3,15 @@ import {Button} from "@mui/material";
 import {useNavigate} from 'react-router-dom';
 import {TextInput} from "flowbite-react";
 import SendIcon from '@mui/icons-material/Send';
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
+import  { Flowbite } from "flowbite-react";
+
+const customTheme = {
+  input: {
+    color: {
+      primary: 'bg-red-500 hover:bg-red-600',
+    },
+  },
+};
 
 function AddTrajectory(){
 
@@ -66,9 +72,11 @@ function AddTrajectory(){
                         } onChange={handleNameTrajectoryChange}
                               placeholder="Insert new trajectory" required/>
                         :
-                    <TextInput id="trajectory-name" type="text" value={trajectoryName} className=""
+                        <Flowbite theme={{ theme: customTheme }}>
+                    <TextInput id="trajectory-name" type="text" value={trajectoryName}
                                placeholder="Insert new trajectory"  sizing="sm" onChange={handleNameTrajectoryChange}
                                required />
+                        </Flowbite>
 
 
                     }

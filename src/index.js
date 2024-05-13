@@ -32,7 +32,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
         <StepJoint>
-            <div className="flex flex-col justify-start items-start fixed top-0 left-0 bg-gray-200 py-8 px-8  shadow-md rounded-r-md overflow-y-auto max-h-screen">
+            <div className="flex flex-col justify-start items-start fixed top-0 left-0 bg-gray-200 py-8 px-12  shadow-md rounded-r-md overflow-y-auto max-h-screen">
                 <div className="">
                     <JointsGrid />
                 </div>

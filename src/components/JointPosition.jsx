@@ -53,17 +53,24 @@ function JointPosition() {
         <>
             <div>
                 {positions.map((element, index) => (
-                    <Box key={index}  sx={{ width: 200, height:50 }}>
+                    <div className="mb-2">
+                    <Box key={index}  sx={{ width: 260, height:50 }} >
                           <Typography id="continuous-slider">
                               {element.name}
                           </Typography>
-                          <Slider aria-label="Joint Position" value={element.position} min={element.min} max={element.max} valueLabelDisplay="auto"/>
-                    </Box>
+                        <div className="flex flex-row">
+                            <div className="w-20 font-bold">
+                                {element.position.toFixed(2)}
+                            </div>
+                            <div className="w-60">
+                          <Slider aria-label="Joint Position" value={element.position.toFixed(2)} min={element.min} max={element.max} valueLabelDisplay="auto"/>
+                            </div>
+                        </div>
+                   </Box>
+                    </div>
                 ))}
             </div>
 
-            <div className="fixed bottom-0 p-4">
-            </div>
 
         </>
     )

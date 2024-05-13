@@ -72,7 +72,7 @@ function BtnUpDownJoint(props) {
     if (props.isFetchingData){
         return (
             <> <Button variant="contained" disabled>
-                    <div className="text-2xl"> {props.buttonText} </div>
+                    <div className="text-xl"> {props.buttonText} </div>
                 </Button>
             </>
         )
@@ -81,7 +81,7 @@ function BtnUpDownJoint(props) {
     else return (
             <>
                 <Button variant="contained" onClick={handleClick}  disabled={btnDisabled} >
-                    <div className=" text-2xl">{props.buttonText}</div>
+                    <div className=" text-xl">{props.buttonText}</div>
                 </Button>
             </>
     )

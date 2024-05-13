@@ -40,9 +40,9 @@ function Trajectory(){
     }
     else return (
         <>
-            <div className="flex justify-center font-bold text-3xl mt-12 mb-2">
+            <div className="flex justify-center font-bold text-4xl mt-12 mb-2">
                <BackRootBtn />
-                <div className="mr-8 ml-6  font-bold italic place-self-center">
+                <div className="mr-8 ml-6  font-bold  place-self-center">
                     {trajectory.name}
                 </div>
                 <PlayTrajectoryBtn/>

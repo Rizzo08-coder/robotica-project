@@ -1,8 +1,11 @@
 import React, {useState} from "react";
 import {useParams} from "react-router-dom";
-import {Avatar, Button} from "flowbite-react";
+import {Avatar} from "flowbite-react";
+import {Button} from "@mui/material";
 import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import SendIcon from "@mui/icons-material/Send";
 
 
 
@@ -34,8 +37,8 @@ function PlayTrajectoryBtn(){
                 <Alert severity="success" elevation={6}>Trajectory sent correctly</Alert>
                 </Snackbar>
                 <div className="{flex justify-center place-self-center items-center">
-                    <Button pill onClick={handleClick} color="gray" disabled>
-                        <Avatar img="/play-icon.png" alt="back-link" size="xs" className=""/>
+                    <Button onClick={handleClick} endIcon={<PlayArrowIcon />} disabled variant="contained" color="secondary" >
+                        Play
                     </Button>
                 </div>
             </>
@@ -45,9 +48,9 @@ function PlayTrajectoryBtn(){
     else return (
         <>
             <div className="{flex justify-center place-self-center items-center">
-            <Button pill onClick={handleClick}  color="gray" >
-                   <Avatar img="/play-icon.png" alt="back-link" size="xs" className="" />
-               </Button>
+            <Button onClick={handleClick} endIcon={<PlayArrowIcon />} color="warning" variant="contained" >
+                Play
+            </Button>
             </div>
         </>
     )
