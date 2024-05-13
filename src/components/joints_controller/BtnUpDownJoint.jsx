@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { Button } from "flowbite-react";
+import { Button } from "@mui/material";
 
 
 const joints_bound = [
@@ -71,8 +71,8 @@ function BtnUpDownJoint(props) {
 
     if (props.isFetchingData){
         return (
-            <> <Button color="light" disabled className="p-1.5 ">
-                    {props.buttonText}
+            <> <Button variant="contained" disabled>
+                    <div className="text-2xl"> {props.buttonText} </div>
                 </Button>
             </>
         )
@@ -80,8 +80,8 @@ function BtnUpDownJoint(props) {
 
     else return (
             <>
-                <Button onClick={handleClick} color="light" disabled={btnDisabled}  className=" focus:ring-4 focus:ring-[#1976d2]">
-                    <div className="text-xl font-bold">{props.buttonText}</div>
+                <Button variant="contained" onClick={handleClick}  disabled={btnDisabled} >
+                    <div className=" text-2xl">{props.buttonText}</div>
                 </Button>
             </>
     )

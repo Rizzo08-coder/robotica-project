@@ -26,7 +26,7 @@ function JointController(props){
                                     isFetchingData={props.isFetchingData}
                                     setIsFetchingData={props.setIsFetchingData}
                      />
-                    <div className="text-center place-self-center">
+                    <div className="text-center font-bold place-self-center">
                         {props.name}
                     </div>
                     <BtnUpDownJoint buttonText="+"

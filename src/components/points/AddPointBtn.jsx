@@ -1,6 +1,8 @@
 import React from "react";
 import {useParams} from "react-router-dom";
-import { Button } from "flowbite-react";
+import { Button } from "@mui/material";
+import CenterFocusStrongIcon from '@mui/icons-material/CenterFocusStrong';
+import DeleteIcon from "@mui/icons-material/Delete";
 
 
 
@@ -24,9 +26,9 @@ function AddPointBtn({setNewPoint, disableAdd}){
 
     return (
         <>
-            <div className="flex justify-center">
-               <Button onClick={handleClick}  color="warning" className="my-4" disabled={disableAdd}>
-                   Acquisisci posizione Robot
+            <div className="flex justify-center my-4">
+               <Button onClick={handleClick} variant="contained" color="success" startIcon={<CenterFocusStrongIcon />} disabled={disableAdd}>
+                   Acquire Position
                </Button>
             </div>
         </>

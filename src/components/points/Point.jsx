@@ -6,7 +6,7 @@ import DeletePointBtn from "./DeletePointBtn";
 function Point({point, setDeletedPoint, isDeletedPoint}){
     return (
         <>
-            <List.Item className="p-3 sm:p-4 bg-gray-300 rounded-md">
+            <List.Item className="p-3 sm:p-4 bg-gray-200 rounded-md">
                 <div className="flex items-center space-x-4 rtl:space-x-reverse">
                     <Avatar img="/point.png" alt="point_img" rounded size="sm" className="mx-4" />
                     <div className="min-w-0 flex">

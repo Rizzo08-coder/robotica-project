@@ -23,7 +23,7 @@ function DeleteTrajectoryBtn({id, setDeletedTrajectory, disableDelete}){
     return (
         <>
             <div className="flex justify-center text-xs">
-                   <Button onClick={handleClick} ariant="outlined" startIcon={<DeleteIcon />} variant="contained" color="error" className="my-4" disabled={disableDelete}>
+                   <Button onClick={handleClick} startIcon={<DeleteIcon />} variant="contained" color="error" className="my-4" disabled={disableDelete}>
                        Delete
                    </Button>
             </div>

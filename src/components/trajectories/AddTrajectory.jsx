@@ -2,6 +2,10 @@ import React, {useState} from "react";
 import {Button} from "@mui/material";
 import {useNavigate} from 'react-router-dom';
 import {TextInput} from "flowbite-react";
+import SendIcon from '@mui/icons-material/Send';
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 
 function AddTrajectory(){
 
@@ -54,7 +58,7 @@ function AddTrajectory(){
                     {errorName ?
                         <TextInput id="trajectory-name" type="text" value={trajectoryName}
                                 color="failure"
-                                   sizing="sm"
+                                sizing="sm"
                                 helperText={
                                  <>
                                 Trajectory name already exists!
@@ -62,14 +66,15 @@ function AddTrajectory(){
                         } onChange={handleNameTrajectoryChange}
                               placeholder="Insert new trajectory" required/>
                         :
-                    <TextInput id="trajectory-name" type="text" value={trajectoryName}
+                    <TextInput id="trajectory-name" type="text" value={trajectoryName} className=""
                                placeholder="Insert new trajectory"  sizing="sm" onChange={handleNameTrajectoryChange}
-                               required/>
+                               required />
+
 
                     }
                 </div>
                 <div className="w-1/5">
-                    <Button type="submit" variant="contained" size="medium" className="w-full text-center">Enter</Button>
+                    <Button type="submit" variant="contained" size="medium" endIcon={<SendIcon />} className="w-full text-center">Enter</Button>
                 </div>
             </form>
         </>
