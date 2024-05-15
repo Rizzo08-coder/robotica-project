@@ -3,13 +3,13 @@ import { Button } from "@mui/material";
 
 
 const joints_bound = [
-        { name: "J1", min:-140.0, max:140.0 },
-        { name: "J2", min:-50.0, max:90.0 },
-        { name: "J3", min:25.0, max:130.0 },
-        { name: "J4", min:-170.0, max:165.0 },
-        { name: "J5", min:-86.0, max:125.0 },
-        { name: "J6", min:-160.0, max:160.0 },
-        { name: "Hand", min:0.15, max:29.85 }
+        { name: "J1", min:-150.0, max:150.0 },
+        { name: "J2", min:-60.0, max:100.0 },
+        { name: "J3", min:18.0, max:140.0 },
+        { name: "J4", min:-170.0, max:170.0 },
+        { name: "J5", min:-95.0, max:135.0 },
+        { name: "J6", min:-170.0, max:170.0 },
+        { name: "Hand", min:0.0, max:30.0 }
     ]
 
 
