@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import LoadingIcon from "./LoadingIcon";
 
+
 const socket = io("ws://localhost:5001", {
   reconnectionDelayMax: 10000
 });

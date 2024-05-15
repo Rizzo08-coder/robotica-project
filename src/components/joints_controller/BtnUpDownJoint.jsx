@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { Button } from "@mui/material";
 
 
+
 const joints_bound = [
         { name: "J1", min:-150.0, max:150.0 },
         { name: "J2", min:-60.0, max:100.0 },
