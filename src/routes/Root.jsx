@@ -8,7 +8,7 @@ function Root(){
     return (
         <>
             <div className="flex justify-center my-12">
-                <img src="/logo.png" alt="logo of application" className="w-64 mr-8"/>
+                <img src="/logo.png" alt="logo of application" className="w-56 mr-8"/>
                 <div className="h-24 w-px bg-gray-900"></div>
                 <img src="/unibs-logo.png" alt="logo of application" className="w-24 ml-8"/>
             </div>

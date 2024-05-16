@@ -18,14 +18,13 @@ function PlayTrajectoryBtn(){
      const url = new URL('http://localhost:5000/api/trajectory/'+parseId+'/play');
 
     const handleClick = () => {
+        setIsSended(true)
         fetch(url).then(
             res => res.json()
         ).then(
             data => {
-                setIsSended(true)
-                setTimeout(() => {
-                    setIsSended(false)
-                }, 5000)
+                setIsSended(false)
+                console.log(data.completed)
             }
         ).catch(
         )}
@@ -34,7 +33,7 @@ function PlayTrajectoryBtn(){
         return (
             <>
                 <Snackbar  open={isSended}>
-                <Alert severity="success" elevation={6}>Trajectory sent correctly</Alert>
+                <Alert severity="success" elevation={6}>Trajectory is loading...</Alert>
                 </Snackbar>
                 <div className="{flex justify-center place-self-center items-center">
                     <Button onClick={handleClick} endIcon={<PlayArrowIcon />} disabled variant="contained" color="secondary" >
