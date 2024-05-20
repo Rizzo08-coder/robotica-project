@@ -55,7 +55,7 @@ function StepModifier(){
                                     aria-labelledby="slider"
                                     valueLabelDisplay="auto"
                                     min={0.01}
-                                    max={2.00}
+                                    max={10.00}
                                     step={0.001}
                                     color="error"
                                 />
